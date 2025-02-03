@@ -1,0 +1,15 @@
+{
+    "host": "https://staging.digit.org/",
+    "localhost": "http://localhost:8082/",
+    "stateCode": "pg",
+    "cityCode": "citya",
+    "auth_header": {
+      "authorization": "Basic ZWdvdi11c2VyLWNsaWVudDo="
+    },
+    "credentials": {
+      "username": "PGRSU",
+      "password": "eGov@123",
+      "userTenant": "pg.citya",
+      "type": "EMPLOYEE"
+    }
+  }
