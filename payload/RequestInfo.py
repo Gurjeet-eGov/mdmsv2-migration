@@ -14,7 +14,7 @@ class UserInfo(BaseModel):
     userName: str
     name: str
     mobileNumber: str
-    emailId: str
+    emailId: Optional[str] = None
     locale: Optional[str] = None
     type: str
     roles: List[Role]

@@ -4,7 +4,6 @@
     },
     "mdmsv2": {
         "schemaCreate": "/mdms-v2/schema/v1/_create",
-        "dataCreate": "/mdms-v2/v2/_create/",
-        "create": "/pgr-services/v2/request/_create"
+        "dataCreate": "/mdms-v2/v2/_create/"
     }
 }

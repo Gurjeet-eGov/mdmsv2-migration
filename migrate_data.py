@@ -28,11 +28,11 @@ def create_data(data_path, tenantId, is_portforward = True):
         body = dataCreate.DataCreate(RequestInfo=REQINFO, 
                                     Mdms=mdms_data).model_dump()
 
-        # response = utils.make_request(method="POST",
-        #                 url=base_url+schemaCode,
-        #                 payload=body)
+        response = utils.make_request(method="POST",
+                        url=base_url+schemaCode,
+                        payload=body)
 
-        # utils.log_response(response)
+        utils.log_response(response)
 
         print(body, type(body), "\n")
         print(base_url+schemaCode, "\n", body, "\n")
@@ -43,5 +43,5 @@ def create_all_data(data_folder, tenantId):
         if item.is_file():
             create_data(item, tenantId)
 
-# create_data("data/RAINMAKER-PGR.ServiceDefs.json", tenantId="pg")
-create_all_data("data", tenantId="pg")
+# create_data("data/BillingService.BusinessService.json", tenantId="pg")
+# create_all_data("data", tenantId="pg")

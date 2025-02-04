@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 
 from payload import RequestInfo as r
 
@@ -11,11 +11,13 @@ class SchemaProperty(BaseModel):
 # Note: We use Field with alias to handle keys that are not valid Python identifiers.
 class Definition(BaseModel):
     type: str
-    title: str
+    title: Optional[str] = "Generated schema for Root"
     schema_: str = Field(..., alias="$schema")
     required: List[str]
     x_unique: List[str] = Field(..., alias="x-unique")
     properties: Dict[str, SchemaProperty]
+    additionalProperties: Optional[bool] = False
+    x_ref_schema: List[Any] = Field(default_factory=list, alias="x-ref-schema")
 
 # Define the model for SchemaDefinition
 class SchemaDefinition(BaseModel):

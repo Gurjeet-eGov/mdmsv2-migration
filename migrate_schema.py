@@ -20,15 +20,15 @@ def create_schema(schema_path, is_portforward = True):
         schema_data = json.load(f)
 
     for schema in schema_data:
-    
+        
         body = schemaCreate.SchemaCreate(RequestInfo=REQINFO, 
                                 SchemaDefinition=schema).model_dump()
 
-        # response = utils.make_request(method="POST",
-        #                 url=base_url,
-        #                 payload=body)
+        response = utils.make_request(method="POST",
+                        url=base_url,
+                        payload=body)
 
-        # utils.log_response(response)
+        utils.log_response(response)
 
         print(body, type(body))
         print(base_url, "\n", schema["code"], "\n")
@@ -40,4 +40,4 @@ def create_all_schema(schema_folder):
             create_schema(item)
 
 # create_schema("schema/pqm.json")
-create_all_schema("schema")
+# create_all_schema("schema")
