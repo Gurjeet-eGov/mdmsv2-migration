@@ -10,7 +10,7 @@ LOCAL_URL = utils.get_env()["localhost"]
 ENDPOINTS = utils.get_api()["mdmsv2"]
 REQINFO = utils.get_reqInfo()
 
-def create_schema(schema_path, is_portforward = True):
+def create_schema(schema_path, tenantId, is_portforward = True):
 
     base_url = LOCAL_URL if is_portforward else URL
     
@@ -21,6 +21,8 @@ def create_schema(schema_path, is_portforward = True):
 
     for schema in schema_data:
         
+        schema["tenantId"] = tenantId
+
         body = schemaCreate.SchemaCreate(RequestInfo=REQINFO, 
                                 SchemaDefinition=schema).model_dump()
 
@@ -33,11 +35,11 @@ def create_schema(schema_path, is_portforward = True):
         print(body, type(body))
         print(base_url, "\n", schema["code"], "\n")
 
-def create_all_schema(schema_folder):
+def create_all_schema(schema_folder, tenantId):
 
     for item in Path(schema_folder).iterdir():
         if item.is_file():
-            create_schema(item)
+            create_schema(item, tenantId)
 
-# create_schema("schema/pqm.json")
-# create_all_schema("schema")
+# create_schema("schema/pqm.json", tenantId="as")
+# create_all_schema("schema", tenantId="as")
