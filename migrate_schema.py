@@ -35,11 +35,11 @@ def create_schema(schema_path, tenantId, is_portforward = True):
         print(body, type(body))
         print(base_url, "\n", schema["code"], "\n")
 
-def create_all_schema(schema_folder, tenantId):
+def create_all_schema(schema_folder, tenantId, is_portforward = True):
 
     for item in Path(schema_folder).iterdir():
         if item.is_file():
-            create_schema(item, tenantId)
+            create_schema(item, tenantId, is_portforward)
 
 # create_schema("schema/pqm.json", tenantId="as")
 # create_all_schema("schema", tenantId="as")

@@ -37,11 +37,11 @@ def create_data(data_path, tenantId, is_portforward = True):
         print(body, type(body), "\n")
         print(base_url+schemaCode, "\n", body, "\n")
 
-def create_all_data(data_folder, tenantId):
+def create_all_data(data_folder, tenantId, is_portforward = True):
 
     for item in Path(data_folder).iterdir():
         if item.is_file():
-            create_data(item, tenantId)
+            create_data(item, tenantId, is_portforward)
 
 # create_data("data/BillingService.BusinessService.json", tenantId="pg")
 # create_all_data("data", tenantId="pg")
