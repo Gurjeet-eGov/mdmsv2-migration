@@ -1,11 +1,11 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Union
 
 from payload import RequestInfo as r
 
 # Define the model for a property within the schema definition
 class SchemaProperty(BaseModel):
-    type: str
+    type: Union[str, List[str]]
 
 # Define the model for the 'definition' part of SchemaDefinition.
 # Note: We use Field with alias to handle keys that are not valid Python identifiers.

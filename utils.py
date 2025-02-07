@@ -124,9 +124,10 @@ def log_response(response):
 def get_auth_token():
 
     env = get_env()
-    url = urljoin(env["host"], 
-                  get_api()["authToken"]["oauth"])
-    creds = env.get("credentials")
+    url = env["host"] + get_api()["authToken"]["oauth"]
+    
+    print(url)
+    creds = env["credentials"]
 
     body = {
               "username": creds["username"],
@@ -137,7 +138,7 @@ def get_auth_token():
               "userType": creds["type"]
             }
     
-    header = get_env()["auth_header"]
+    header = env["auth_header"]
 
     response = make_request("POST", url, payload=body, headers=header, is_json=False).json()
 

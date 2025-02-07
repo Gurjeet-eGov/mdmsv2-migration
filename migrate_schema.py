@@ -14,7 +14,7 @@ def create_schema(schema_path, tenantId, is_portforward = True):
 
     base_url = LOCAL_URL if is_portforward else URL
     
-    base_url = urljoin(base_url, ENDPOINTS["schemaCreate"])
+    base_url = base_url + ENDPOINTS["schemaCreate"]
 
     with open(schema_path) as f:
         schema_data = json.load(f)
@@ -32,7 +32,7 @@ def create_schema(schema_path, tenantId, is_portforward = True):
 
         utils.log_response(response)
 
-        print(body, type(body))
+        print(response.request.body, type(response.request.body))
         print(base_url, "\n", schema["code"], "\n")
 
 def create_all_schema(schema_folder, tenantId, is_portforward = True):
