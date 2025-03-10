@@ -1,0 +1,112 @@
+[
+    {
+      "tenantId": "pg",
+      "code": "BillingService.BusinessService",
+      "description": "  ",
+      "definition": {
+        "type": "object",
+        "title": "Generated schema for Root",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "required": [
+          "businessService",
+          "code",
+          "collectionModesNotAllowed",
+          "partPaymentAllowed",
+          "isAdvanceAllowed"
+        ],
+        "x-unique": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "billGineiURL": {
+            "type": "string"
+          },
+          "businessService": {
+            "type": "string"
+          },
+          "demandUpdateTime": {
+            "type": "number",
+            "default": 86400000
+          },
+          "isAdvanceAllowed": {
+            "type": "boolean",
+            "deault": false
+          },
+          "minAmountPayable": {
+            "type": "number",
+            "default": 100
+          },
+          "partPaymentAllowed": {
+            "type": "boolean",
+            "deault": true
+          },
+          "isBillAmendmentEnabled": {
+            "type": "boolean",
+            "deault": true
+          },
+          "isVoucherCreationEnabled": {
+            "type": "boolean",
+            "deault": true
+          },
+          "collectionModesNotAllowed": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "DD",
+                "OFFLINE_NEFT",
+                "OFFLINE_RTGS",
+                "POSTAL_ORDER"
+              ],
+              "type": "string"
+            }
+          }
+        },
+        "x-ref-schema": []
+      },
+      "isActive": true
+    },
+    {
+      "tenantId": "pg",
+      "code": "PropertyTax.Interest",
+      "description": "  ",
+      "definition": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Generated schema for Root",
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "number"
+          },
+          "minAmount": {
+            "type": "number"
+          },
+          "flatAmount": {
+            "type": "number"
+          },
+          "maxAmount": {
+            "type": "number"
+          },
+          "fromFY": {
+            "type": "string"
+          },
+          "startingDay": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "rate",
+          "fromFY",
+          "startingDay"
+        ],
+        "x-unique": [
+          "fromFY",
+          "startingDay"
+        ],
+        "x-ref-schema": []
+      },
+      "isActive": true
+    }
+  ]

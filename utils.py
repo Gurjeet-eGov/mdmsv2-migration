@@ -141,7 +141,7 @@ def get_auth_token():
     header = env["auth_header"]
 
     response = make_request("POST", url, payload=body, headers=header, is_json=False).json()
-
+    print(response)
     return response["access_token"], response["UserRequest"]
 
 def get_reqInfo():

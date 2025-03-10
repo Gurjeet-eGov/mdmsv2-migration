@@ -24,7 +24,7 @@ def create_schema(schema_path, tenantId, is_portforward = True):
         schema["tenantId"] = tenantId
 
         body = schemaCreate.SchemaCreate(RequestInfo=REQINFO, 
-                                SchemaDefinition=schema).model_dump()
+                                SchemaDefinition=schema).model_dump(by_alias=True)
 
         response = utils.make_request(method="POST",
                         url=base_url,

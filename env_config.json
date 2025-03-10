@@ -1,15 +1,15 @@
 {
-    "host": "https://naljal.digit.org/uat",
-    "localhost": "http://localhost:8082/uat",
-    "stateCode": "as",
+    "host": "https://unified-qa.digit.org",
+    "localhost": "http://localhost:8082",
+    "stateCode": "pg",
     "cityCode": "citya",
     "auth_header": {
       "authorization": "Basic ZWdvdi11c2VyLWNsaWVudDo="
     },
     "credentials": {
-      "username": "4000000001",
+      "username": "MDMSADA",
       "password": "eGov@123",
-      "userTenant": "as",
+      "userTenant": "pg",
       "type": "EMPLOYEE"
     }
   }
