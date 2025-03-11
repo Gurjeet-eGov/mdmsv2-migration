@@ -95,35 +95,72 @@
   {
     "tenantId": "pg",
     "code": "FSM.Config",
-    "description": "  ",
+    "description": "Fsm Config",
     "definition": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
-      "title": "Generated schema for Root",
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "WFState": {
+          "type": "string"
+        },
+        "override": {
+          "type": "boolean"
+        },
+        "default": {
+          "type": "integer"
+        },
+        "overrideField": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
       "required": [
         "code",
         "active"
       ],
       "x-unique": [
         "code"
-      ],
-      "properties": {
-        "code": {
-          "type": "string"
-        },
-        "active": {
-          "type": "boolean"
-        },
-        "WFState": {
-          "type": "string"
-        },
-        "override": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
+      ]
     },
     "isActive": true
   },
